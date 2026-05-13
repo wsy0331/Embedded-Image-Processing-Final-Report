@@ -77,8 +77,8 @@
 4.  **第四階段**：輸出符合要求的 Bounding Box 與最終專案報告。
 ---
 
-https://github.com/user-attachments/assets/fbd72476-2af1-4a97-aab7-a505e891dae0
-
-
 ## 7. 目前效果
+
+
+https://github.com/user-attachments/assets/fbd72476-2af1-4a97-aab7-a505e891dae0
 
