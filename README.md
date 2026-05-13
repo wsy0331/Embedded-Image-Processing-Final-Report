@@ -81,7 +81,6 @@
 
 <img width="1920" height="847" alt="image" src="https://github.com/user-attachments/assets/f9fdd0de-8762-48f0-8b01-1f82764a7ec3" />
 
-根據您的需求，我將「待修改事項」與「目前 BUG」整理成 Markdown 勾選列表格式。這不僅適合放在您的 GitHub `README.md` 中，也能讓老師清楚看到您的進度管理。
 
 ---
 
