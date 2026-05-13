@@ -80,8 +80,8 @@
 ## 7. 目前效果
 
 
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/8f2b76c5-278c-433d-a7f7-ff1a530963e4" />
 
-<https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4>
 
 
 
