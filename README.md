@@ -79,4 +79,4 @@
 https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4
 ## 7. 目前效果
 
-![Sample Video](output_videos/fire_detection_output.mp4)
+![Sample Video](https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4)
