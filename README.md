@@ -80,7 +80,8 @@
 ## 7. 目前效果
 
 <img width="1920" height="847" alt="image" src="https://github.com/user-attachments/assets/f9fdd0de-8762-48f0-8b01-1f82764a7ec3" />
-
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/7e489285-f1df-4224-9db4-984c956bc214" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/ebe1417e-aa97-41ec-b5ba-76a284d9624f" />
 
 ---
 
@@ -93,7 +94,7 @@
 - [ ] **偵測範圍過小**：火焰圈選的 Bounding Box 範圍僅侷限於核心亮點，未能完整覆蓋火舌與影響區域。
 - [ ] **煙霧偵測不足**：目前煙霧部分僅標示出光流向量，缺乏顏色特徵與形態學的二值化判定。
 - [ ] **動態背景干擾**：當鏡頭移動（Camera Motion）時，全域光流會導致畫面滿佈向量箭頭，導致靜止火源與背景位移混淆。
-
+- [ ] **反射誤判**：當影片裡具有反射的物品，如:鏡子、金屬、玻璃等，會容易辨識成火苗。
 #### 🛠️ 預計改進方案
 - [ ] **演算法修正：紅域物體過濾**
     - [ ] 引入「閃爍頻率」檢測：火焰具有高頻擾動特性，而一般紅衣物體位移較平滑。
