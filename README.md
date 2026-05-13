@@ -81,7 +81,7 @@
 
 
 
-<https://github.com/user-attachments/assets/1c0710e6-5b66-4e99-8778-0dcda2613db4>
+<https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4>
 
 
 
