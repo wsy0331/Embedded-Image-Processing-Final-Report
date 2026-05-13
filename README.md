@@ -3,6 +3,58 @@
 
 ---
 
+```mermaid
+graph TD
+    %% 定義模組容器
+    subgraph "火焰檢測系統架構 (Fire Detection System Architecture)"
+        
+        subgraph "1. 資料獲取模組 (Data Acquisition Module)"
+            Input[影片讀取單元<br/>cv2.VideoCapture]
+            Pre[影像規格化單元<br/>Resize / Gray Scale]
+        end
+
+        subgraph "2. 特徵提取模組 (Feature Extraction Module)"
+            direction TB
+
+            subgraph "動態分析子系統 (Motion)"
+                OF[光流計算引擎<br/>Farneback Engine]
+                MA[運動強度分析器]
+            end
+
+            subgraph "靜態分析子系統 (Color)"
+                CS[顏色分離器<br/>Channel Splitter]
+                CL[火焰色彩判定邏輯]
+            end
+        end
+
+        subgraph "3. 信號融合模組 (Signal Fusion Module)"
+            AND[遮罩邏輯運算器<br/>Bitwise AND]
+            Morph[形態學濾波器<br/>Morphology Ex]
+        end
+
+        subgraph "4. 判讀顯示模組 (UI & Interpretation Module)"
+            Detect[目標偵測與量化<br/>Contour / Area]
+            Vis[視覺化繪圖器<br/>Arrows / Bounding Box]
+        end
+
+    end
+
+    %% 模組間資料流
+    Input --> Pre
+    Pre --> OF
+    Pre --> CS
+
+    OF --> MA
+    CS --> CL
+
+    MA --> AND
+    CL --> AND
+
+    AND --> Morph
+    Morph --> Detect
+    Detect --> Vis
+```
+
 # 需求規格分析書：火災與煙霧偵測系統
 
 ## 1. 專案概述
@@ -113,9 +165,46 @@
     - [ ] 測試跳幀計算（每 3 幀計算一次光流）以提升 FPS。
 
 
+## 1. 系統流程圖
 
+我們使用 Mermaid 語法來描述處理流程，GitHub 會自動將其渲染為流程圖：
 
+```mermaid
+graph TD
+    subgraph Input ["影像輸入"]
+        A[影片串流] --> B[調整解析度 1280x720]
+        B --> C[轉換灰階作為基準]
+    end
 
+    subgraph Analysis ["核心分析循環"]
+        C --> D[讀取下一幀]
+        D --> E1[分支一：Farneback 光流]
+        D --> E2[分支二：顏色特徵提取]
+
+        subgraph Motion ["運動檢測"]
+            E1 --> F1[計算運動幅度 mag]
+            F1 --> G1[運動遮罩 > 2.0]
+            G1 --> H1[形態學去噪]
+        end
+
+        subgraph Color ["色彩檢測"]
+            E2 --> F2[拆分 BGR 通道]
+            F2 --> G2["比率判定: R/G > 1 & R/B > 1.2"]
+            G2 --> H2[顏色遮罩 + 亮度過濾 R > 120]
+        end
+
+        H1 & H2 --> I[遮罩交集 Bitwise AND]
+    end
+
+    subgraph Output ["標記與輸出"]
+        I --> J[輪廓檢測 findContours]
+        J --> K{面積 > 200?}
+        K -- Yes --> L[繪製紅色火源輪廓]
+        L --> M[繪製綠色光流流向箭頭]
+        M --> N[顯示統計資訊與視窗]
+    end
+
+    N --> D
 
 
 
