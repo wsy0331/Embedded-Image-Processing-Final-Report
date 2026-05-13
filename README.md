@@ -78,14 +78,7 @@
 ---
 https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4
 ## 7. 目前效果
-<video src="https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4" controls>
-  你的浏览器不支持 <code>video</code> 标签。
-</video>
 
-<video width="320" controls loop>
-  <source src="fire_detection_output" type="video/mp4">
-  <source src="myVideo.webm" type="video/webm">
-  <source src="myVideo.ogv" type="video/ogg" />
-  <p>Your browser doesn't support HTML5 video. Here is
-     a <a href="myVideo.mp4">link to the video</a> instead.</p>
-</video>
+<video id="video" controls="" preload="none" poster="封面">
+      <source id="mp4" src="https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4" type="video/mp4">
+</videos>
