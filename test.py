@@ -1,8 +1,22 @@
 import cv2
 import numpy as np
+import os
 
-cap = cv2.VideoCapture("fire_smoke3.mp4")
+cap = cv2.VideoCapture("fire_smoke1.mp4")
 target_w, target_h = 1280, 720
+
+# 取得原始視頻的 FPS
+fps = cap.get(cv2.CAP_PROP_FPS)
+
+# 建立輸出文件夾
+output_folder = "output_videos"
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+
+# 初始化視頻寫入器
+output_path = os.path.join(output_folder, "fire_detection_output.mp4")
+fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+out = cv2.VideoWriter(output_path, fourcc, fps, (target_w, target_h))
 
 # 初始化
 ret, frame = cap.read()
@@ -103,7 +117,7 @@ while cap.isOpened():
         area = cv2.contourArea(contour)
 
         # 只處理足夠大的區域
-        if area > 200:
+        if area > 10:
             M = cv2.moments(contour)
             if M["m00"] != 0:
                 cx = int(M["m10"] / M["m00"])
@@ -150,11 +164,16 @@ while cap.isOpened():
     cv2.imshow("Fire Color Mask (R/G > 1.4 & R/B > 1.2)", fire_color_mask)
     cv2.imshow("Combined (Motion + Color)", combined_mask)
 
+    # 寫入處理後的幀到輸出視頻
+    out.write(display_frame)
+
     prev_gray = curr_gray
     prev_frame = curr_frame
 
-    if cv2.waitKey(1) != -1:
-        break
+    cv2.waitKey(1)
 
 cap.release()
+out.release()
 cv2.destroyAllWindows()
+
+print(f"視頻已保存到: {output_path}")
