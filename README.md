@@ -75,3 +75,7 @@
 2.  **第二階段**：在 Raspberry Pi 4B 上測試，記錄不同解析度（720p vs 360p）下的 FPS 差異。
 3.  **第三階段**：進行環境光測試（開燈/關燈/不同色溫），調整比例參數以提升魯棒性。
 4.  **第四階段**：輸出符合要求的 Bounding Box 與最終專案報告。
+---
+
+## 6. 目前效果
+https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4
