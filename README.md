@@ -80,5 +80,8 @@
 ## 7. 目前效果
 
 
-https://github.com/user-attachments/assets/fbd72476-2af1-4a97-aab7-a505e891dae0
+
+https://github.com/user-attachments/assets/1c0710e6-5b66-4e99-8778-0dcda2613db4
+
+
 
