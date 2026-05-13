@@ -78,5 +78,7 @@
 ---
 
 ## 7. 目前效果
-<video src="https://github.com/user/repo/blob/main/output_videos/fire_detection_output.mp4" controls="controls" style="max-width: 100%;"></video>
+<video src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
 
