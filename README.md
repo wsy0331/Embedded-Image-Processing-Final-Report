@@ -76,9 +76,9 @@
 3.  **第三階段**：進行環境光測試（開燈/關燈/不同色溫），調整比例參數以提升魯棒性。
 4.  **第四階段**：輸出符合要求的 Bounding Box 與最終專案報告。
 ---
-
+https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4
 ## 7. 目前效果
-<video src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" controls>
+<video src="https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4" controls>
   你的浏览器不支持 <code>video</code> 标签。
 </video>
 
