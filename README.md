@@ -77,5 +77,6 @@
 4.  **第四階段**：輸出符合要求的 Bounding Box 與最終專案報告。
 ---
 
-## 6. 目前效果
-https://github.com/wsy0331/Embedded-Image-Processing-Final-Report/blob/main/output_videos/fire_detection_output.mp4
+## 7. 目前效果
+<video src="https://github.com/user/repo/blob/main/output_videos/fire_detection_output.mp4" controls="controls" style="max-width: 100%;">
+</video>
