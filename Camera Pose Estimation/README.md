@@ -3,7 +3,7 @@
 
 # Embedded-Image-Processing-Final-Report
 
-## 主題：室內手機相機姿態估測 Camera Pose Estimation (更新版)
+## 主題：室內手機相機姿態估測 Camera Pose Estimation 
 
 本專案旨在針對單張室內圖像，利用電腦視覺技術估算相機在拍攝當下的世界座標姿態資訊：**Yaw（偏航）、Pitch（俯仰）、Roll（翻滾）**。
 本版本強化了線段合併（Line Merging）與消失點（Vanishing Point）聚類邏輯，並支援自動擴展畫布以視覺化位於圖像外的消失點。
@@ -65,8 +65,7 @@
 ---
 
 
-### 2.5 可使用的工具 (修正版)
-
+### 2.5 可使用的工具 
 - [x] **Gaussian Blur (高斯模糊)**：用於前處理平滑影像，濾除高頻雜訊。
 - [ ] **Binarization (histogram) (二值化)**：未直接使用，由 Canny 內部的雙閾值機制取代。
 - [ ] **Sobel (索貝爾算子)**：未直接使用，改用偵測結果更細緻的 Canny。
