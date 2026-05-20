@@ -43,53 +43,46 @@ Output --> Input
 
 ## ５. 系統架構圖
 ```mermaid
-graph TD
-    %% 定義模組容器
-    subgraph "火焰檢測系統架構 (Fire Detection System Architecture)"
+graph LR
+    %% 整體排版設定為由左至右 (Left to Right)
+    
+    subgraph Stage1 ["1. 資料獲取模組"]
+        direction TB
+        Input[影片讀取單元<br/>VideoCapture]
+        Pre[影像規格化單元<br/>Resize / HSV / Gray]
         
-        subgraph "1. 資料獲取模組 (Data Acquisition Module)"
-            Input[影片讀取單元<br/>cv2.VideoCapture]
-            Pre[影像規格化單元<br/>Resize / Gray Scale]
-        end
-
-        subgraph "2. 特徵提取模組 (Feature Extraction Module)"
-            direction TB
-
-            subgraph "動態分析子系統 (Motion)"
-                OF[光流計算引擎<br/>Farneback Engine]
-                MA[運動強度分析器]
-            end
-
-            subgraph "靜態分析子系統 (Color)"
-                CS[顏色分離器<br/>Channel Splitter]
-                CL[火焰色彩判定邏輯]
-            end
-        end
-
-        subgraph "3. 信號融合模組 (Signal Fusion Module)"
-            AND[遮罩邏輯運算器<br/>Bitwise AND]
-            Morph[形態學濾波器<br/>Morphology Ex]
-        end
-
-        subgraph "4. 判讀顯示模組 (UI & Interpretation Module)"
-            Detect[目標偵測與量化<br/>Contour / Area]
-            Vis[視覺化繪圖器<br/>Arrows / Bounding Box]
-        end
-
+        Input --> Pre
     end
 
-    %% 模組間資料流
-    Input --> Pre
-    Pre --> OF
-    Pre --> CS
+    subgraph Stage2 ["2. 特徵提取模組"]
+        direction TB
+        Motion[動態分析引擎<br/>MOG2 & Farneback]
+        Color[色彩判定邏輯<br/>HSV 雙軌閥值]
+    end
 
-    OF --> MA
-    CS --> CL
+    subgraph Stage3 ["3. 信號融合模組"]
+        direction TB
+        Morph[形態學濾波器<br/>Morphology Ex]
+        AND[遮罩邏輯運算器<br/>Bitwise AND / NOT]
+        
+        Morph --> AND
+       
+    end
 
-    MA --> AND
-    CL --> AND
+    subgraph Stage4 ["4. 判讀顯示模組"]
+        direction TB
+        Detect[目標偵測與量化<br/>findContours / Area]
+        Vis[視覺化繪圖器<br/>UI & Bounding Box]
+        
+        Detect --> Vis
+    end
 
-    AND --> Morph
-    Morph --> Detect
-    Detect --> Vis
+    %% 跨模組的資料流 (這會強制系統將 Subgraph 橫向並排)
+    Pre --> Motion
+    Pre --> Color
+
+    Motion --> Morph
+    Color --> AND
+
+    AND --> Detect
 ```
