@@ -3,6 +3,58 @@
 
 ---
 
+```mermaid
+graph TD
+    %% 定義模組容器
+    subgraph "火焰檢測系統架構 (Fire Detection System Architecture)"
+        
+        subgraph "1. 資料獲取模組 (Data Acquisition Module)"
+            Input[影片讀取單元<br/>cv2.VideoCapture]
+            Pre[影像規格化單元<br/>Resize / Gray Scale]
+        end
+
+        subgraph "2. 特徵提取模組 (Feature Extraction Module)"
+            direction TB
+
+            subgraph "動態分析子系統 (Motion)"
+                OF[光流計算引擎<br/>Farneback Engine]
+                MA[運動強度分析器]
+            end
+
+            subgraph "靜態分析子系統 (Color)"
+                CS[顏色分離器<br/>Channel Splitter]
+                CL[火焰色彩判定邏輯]
+            end
+        end
+
+        subgraph "3. 信號融合模組 (Signal Fusion Module)"
+            AND[遮罩邏輯運算器<br/>Bitwise AND]
+            Morph[形態學濾波器<br/>Morphology Ex]
+        end
+
+        subgraph "4. 判讀顯示模組 (UI & Interpretation Module)"
+            Detect[目標偵測與量化<br/>Contour / Area]
+            Vis[視覺化繪圖器<br/>Arrows / Bounding Box]
+        end
+
+    end
+
+    %% 模組間資料流
+    Input --> Pre
+    Pre --> OF
+    Pre --> CS
+
+    OF --> MA
+    CS --> CL
+
+    MA --> AND
+    CL --> AND
+
+    AND --> Morph
+    Morph --> Detect
+    Detect --> Vis
+```
+
 # 需求規格分析書：火災與煙霧偵測系統
 
 ## 1. 專案概述
@@ -75,3 +127,86 @@
 2.  **第二階段**：在 Raspberry Pi 4B 上測試，記錄不同解析度（720p vs 360p）下的 FPS 差異。
 3.  **第三階段**：進行環境光測試（開燈/關燈/不同色溫），調整比例參數以提升魯棒性。
 4.  **第四階段**：輸出符合要求的 Bounding Box 與最終專案報告。
+---
+
+## 7. 目前效果
+
+<img width="1920" height="847" alt="image" src="https://github.com/user-attachments/assets/f9fdd0de-8762-48f0-8b01-1f82764a7ec3" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/7e489285-f1df-4224-9db4-984c956bc214" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/ebe1417e-aa97-41ec-b5ba-76a284d9624f" />
+
+---
+
+### 💡 待修改事項與效能優化 (Todo List)
+
+以下是針對目前系統問題與硬體限制所列出的改進計畫：
+
+#### 🔴 目前已知 BUG 與問題
+- [ ] **誤判問題**：系統可能對「會移動的紅色物體」（如紅衣行人、紅色車輛）仍會判定為火源(待測試)。
+- [ ] **偵測範圍過小**：火焰圈選的 Bounding Box 範圍僅侷限於核心亮點，未能完整覆蓋火舌與影響區域。
+- [ ] **煙霧偵測不足**：目前煙霧部分僅標示出光流向量，缺乏顏色特徵與形態學的二值化判定。
+- [ ] **動態背景干擾**：當鏡頭移動（Camera Motion）時，全域光流會導致畫面滿佈向量箭頭，導致靜止火源與背景位移混淆。
+- [ ] **反射誤判**：當影片裡具有反射的物品，如:鏡子、金屬、玻璃等，會容易辨識成火苗。
+#### 🛠️ 預計改進方案
+- [ ] **演算法修正：紅域物體過濾**
+    - [ ] 引入「閃爍頻率」檢測：火焰具有高頻擾動特性，而一般紅衣物體位移較平滑。
+    - [ ] 增加 HSV 色彩空間輔助，過濾飽和度過高的非自然火源色。
+- [ ] **演算法修正：範圍擴張**
+    - [ ] 調整形態學 `cv2.dilate` (膨脹) 的核大小（Kernel Size），合併細小碎塊。
+    - [ ] 優化 `combined_mask` 的判定閾值，使邊緣較弱的火光也能納入範圍。
+- [ ] **演算法修正：煙霧判定邏輯**
+    - [ ] 增加「灰色系特徵」偵測（RGB 差值小於閾值）。
+    - [ ] 結合運動特徵與膨脹性質（煙霧通常隨時間擴散）。
+- [ ] **演算法修正：全球光流補償 (Global Motion Compensation)**
+    - [ ] 計算整幀影像的**平均光流向量**（或眾數向量）。
+    - [ ] 在計算運動遮罩前，先減去該平均向量，以消除鏡頭平移帶來的雜訊。
+- [ ] **硬體效能優化 (Raspberry Pi 4B)**
+    - [ ] 將運算解析度下探至 360p，並評估對精準度的影響。
+    - [ ] 測試跳幀計算（每 3 幀計算一次光流）以提升 FPS。
+
+
+## 1. 系統流程圖
+
+我們使用 Mermaid 語法來描述處理流程，GitHub 會自動將其渲染為流程圖：
+
+```mermaid
+graph TD
+    subgraph Input ["影像輸入"]
+        A[影片串流] --> B[調整解析度 1280x720]
+        B --> C[轉換灰階作為基準]
+    end
+
+    subgraph Analysis ["核心分析循環"]
+        C --> D[讀取下一幀]
+        D --> E1[分支一：Farneback 光流]
+        D --> E2[分支二：顏色特徵提取]
+
+        subgraph Motion ["運動檢測"]
+            E1 --> F1[計算運動幅度 mag]
+            F1 --> G1[運動遮罩 > 2.0]
+            G1 --> H1[形態學去噪]
+        end
+
+        subgraph Color ["色彩檢測"]
+            E2 --> F2[拆分 BGR 通道]
+            F2 --> G2["比率判定: R/G > 1 & R/B > 1.2"]
+            G2 --> H2[顏色遮罩 + 亮度過濾 R > 120]
+        end
+
+        H1 & H2 --> I[遮罩交集 Bitwise AND]
+    end
+
+    subgraph Output ["標記與輸出"]
+        I --> J[輪廓檢測 findContours]
+        J --> K{面積 > 200?}
+        K -- Yes --> L[繪製紅色火源輪廓]
+        L --> M[繪製綠色光流流向箭頭]
+        M --> N[顯示統計資訊與視窗]
+    end
+
+    N --> D
+
+
+
+
+

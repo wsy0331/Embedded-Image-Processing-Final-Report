@@ -1,0 +1,12 @@
+# Requirements for Camera Pose Estimation notebook/script
+# Core
+numpy>=1.21.0
+opencv-python>=4.5.5
+
+# Optional (use in notebooks or for plotting)
+matplotlib>=3.4.0
+jupyter>=1.0.0
+
+# Notes:
+# - If running on a headless server or CI, install `opencv-python-headless` instead of `opencv-python`.
+#   Example: pip install numpy opencv-python-headless matplotlib jupyter
