@@ -131,9 +131,9 @@ graph TD
 
 ## 7. 目前效果
 
-<img width="1920" height="847" alt="image" src="https://github.com/user-attachments/assets/f9fdd0de-8762-48f0-8b01-1f82764a7ec3" />
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/7e489285-f1df-4224-9db4-984c956bc214" />
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/ebe1417e-aa97-41ec-b5ba-76a284d9624f" />
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/9ccdd328-7ade-4919-a632-1cf0fb854bb1" />
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/6844e1a8-9ed5-42aa-8c9c-f9c25dcc78c9" />
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/cb8f9e79-579d-4064-b521-d418758d11bc" />
 
 ---
 
