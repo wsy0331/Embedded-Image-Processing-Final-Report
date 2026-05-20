@@ -1,179 +1,109 @@
 import cv2
 import numpy as np
-import os
 
-cap = cv2.VideoCapture("fire_smoke1.mp4")
-target_w, target_h = 1280, 720
+def main():
+    INPUT_VIDEO = "fire_smoke3.mp4"
+    TARGET_SIZE = (640, 480)
 
-# 取得原始視頻的 FPS
-fps = cap.get(cv2.CAP_PROP_FPS)
+    cap = cv2.VideoCapture(INPUT_VIDEO)
+    
+    # 火焰專用：MOG2 背景相減器 (運算快，適合抓高亮度火焰)
+    bg_subtractor = cv2.createBackgroundSubtractorMOG2(history=500, varThreshold=16, detectShadows=True)
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
 
-# 建立輸出文件夾
-output_folder = "output_videos"
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
-
-# 初始化視頻寫入器
-output_path = os.path.join(output_folder, "fire_detection_output.mp4")
-fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-out = cv2.VideoWriter(output_path, fourcc, fps, (target_w, target_h))
-
-# 初始化
-ret, frame = cap.read()
-prev_frame = cv2.resize(frame, (target_w, target_h))
-prev_gray = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
-
-while cap.isOpened():
-    ret, frame = cap.read()
+    # ==========================================
+    # 初始化：讀取第一幀給光流法使用
+    # ==========================================
+    ret, first_frame = cap.read()
     if not ret:
-        break
+        print("無法讀取影片")
+        return
+    prev_frame = cv2.resize(first_frame, TARGET_SIZE)
+    prev_gray = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
 
-    curr_frame = cv2.resize(frame, (target_w, target_h))
-    curr_gray = cv2.cvtColor(curr_frame, cv2.COLOR_BGR2GRAY)
+    # ==========================================
+    # 定義 HSV 顏色範圍
+    # ==========================================
+    # 火焰 (紅橘、高飽和、高亮度)
+    lower_fire = np.array([0, 100, 150])
+    upper_fire = np.array([35, 255, 255])
 
-    # --- 步驟 1: 光流檢測運動區域 ---
-    flow = cv2.calcOpticalFlowFarneback(
-        prev_gray,
-        curr_gray,
-        None,
-        pyr_scale=0.5,
-        levels=7,
-        winsize=5,
-        iterations=10,
-        poly_n=7,
-        poly_sigma=1.5,
-        flags=0,
-    )
+    # 煙霧 (深灰到純白)
+    lower_smoke = np.array([0, 0, 20])   
+    upper_smoke = np.array([179, 45, 255]) 
 
-    # 計算光流的幅度（運動強度）
-    mag, ang = cv2.cartToPolar(flow[..., 0], flow[..., 1])
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
 
-    # 創建運動遮罩（只保留有明顯運動的區域）
-    motion_threshold = 2.0  # 運動強度閾值
-    motion_mask = cv2.inRange(mag, motion_threshold, 255)
+        curr_frame = cv2.resize(frame, TARGET_SIZE) 
+        hsv_frame = cv2.cvtColor(curr_frame, cv2.COLOR_BGR2HSV)
+        curr_gray = cv2.cvtColor(curr_frame, cv2.COLOR_BGR2GRAY)
 
-    # 形態學操作清潔運動遮罩
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
-    motion_mask = cv2.morphologyEx(motion_mask, cv2.MORPH_CLOSE, kernel)
-    motion_mask = cv2.morphologyEx(motion_mask, cv2.MORPH_OPEN, kernel)
+        # ==========================================
+        # 模組 1：火焰偵測 (MOG2 + HSV)
+        # ==========================================
+        motion_mask = bg_subtractor.apply(curr_frame)
+        motion_mask = cv2.morphologyEx(motion_mask, cv2.MORPH_OPEN, kernel)
+        motion_mask = cv2.morphologyEx(motion_mask, cv2.MORPH_CLOSE, kernel)
 
-    # --- 步驟 2: 使用 RGB 通道比例檢測紅色/橙色火焰 ---
-    # 分解 BGR 通道（OpenCV 是 BGR 順序）
-    b = curr_frame[:, :, 0].astype(np.float32)
-    g = curr_frame[:, :, 1].astype(np.float32)
-    r = curr_frame[:, :, 2].astype(np.float32)
+        fire_color_mask = cv2.inRange(hsv_frame, lower_fire, upper_fire)
+        fire_mask = cv2.bitwise_and(motion_mask, fire_color_mask)
+        fire_contours, _ = cv2.findContours(fire_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # 避免除以零
-    g_safe = np.where(g > 10, g, 1)
+        # ==========================================
+        # 模組 2：煙霧偵測 (稠密光流 Farneback + HSV)
+        # ==========================================
+        # 1. 計算稠密光流
+        # 為了降低樹莓派負擔，這裡的層數(levels)設為 3，迭代次數(iterations)設為 3
+        flow = cv2.calcOpticalFlowFarneback(
+            prev_gray, curr_gray, None, 
+            pyr_scale=0.5, levels=3, winsize=5, 
+            iterations=3, poly_n=5, poly_sigma=1.2, flags=0
+        )
+        
+        # 2. 計算光流的移動強度 (Magnitude)
+        mag, _ = cv2.cartToPolar(flow[..., 0], flow[..., 1])
+        
+        # 3. 建立光流運動遮罩 (過濾掉極微小的相機雜訊，保留移動強度 > 1.0 的像素)
+        flow_motion_mask = cv2.inRange(mag, 1.0, 255)
+        flow_motion_mask = cv2.morphologyEx(flow_motion_mask, cv2.MORPH_OPEN, kernel)
 
-    # 計算紅/綠比例（火焰特徵：紅色通道遠高於綠色）
-    rg_ratio = r / g_safe
+        # 4. 取得煙霧顏色遮罩
+        smoke_color_mask = cv2.inRange(hsv_frame, lower_smoke, upper_smoke)
 
-    # 計算紅/藍比例（火焰特徵：紅色通道高於藍色）
-    b_safe = np.where(b > 1, b, 1)
-    rb_ratio = r / b_safe
+        # 5. 結合：光流偵測到的動態 + 煙霧的 HSV 顏色
+        smoke_mask = cv2.bitwise_and(flow_motion_mask, smoke_color_mask)
+        
+        # 確保煙霧不會標記到火焰的區域
+        final_smoke_mask = cv2.bitwise_and(smoke_mask, cv2.bitwise_not(fire_color_mask))
 
-    # 火焰判定：R/G > 1.4 且 R/B > 1.2 且 R 值足夠高
-    fire_color_mask = (rg_ratio > 1) & (rb_ratio > 1.2) & (r > 120)
-    fire_color_mask = fire_color_mask.astype(np.uint8) * 255
+        # 繪製結果
+        display_frame = curr_frame.copy()
 
-    # 形態學操作清潔火焰顏色遮罩
-    fire_color_mask = cv2.morphologyEx(fire_color_mask, cv2.MORPH_CLOSE, kernel)
-    fire_color_mask = cv2.morphologyEx(fire_color_mask, cv2.MORPH_OPEN, kernel)
+        # 畫火焰 (綠色框線)
+        for contour in fire_contours:
+            if cv2.contourArea(contour) > 15:
+                cv2.drawContours(display_frame, [contour], -1, (0, 255, 0), 2)
 
-    # --- 步驟 3: 結合運動 + 顏色 ---
-    # 只保留既有運動又是火焰顏色的區域
-    combined_mask = cv2.bitwise_and(motion_mask, fire_color_mask)
+        # 畫煙霧 (藍色框線)
+        smoke_contours, _ = cv2.findContours(final_smoke_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        for contour in smoke_contours:
+            if cv2.contourArea(contour) > 200: # 煙霧面積通常較大
+                cv2.drawContours(display_frame, [contour], -1, (255, 0, 0), 2)
 
-    # --- 步驟 4:標記火源 ---
-    contours, _ = cv2.findContours(
-        combined_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
-    )
+        cv2.imshow("Fire (MOG2) & Smoke (Optical Flow)", display_frame)
+        cv2.imshow("Optical Flow Mask", flow_motion_mask) # 讓你看光流抓動態的效果
 
-    # --- 步驟 5: 在原始視頻上繪製光流向量 ---
-    display_frame = curr_frame.copy()
-    step = 10  # 光流採樣步長（越小越密集）
-    h, w = curr_frame.shape[:2]
-    y_coords, x_coords = (
-        np.mgrid[step / 2 : h : step, step / 2 : w : step].reshape(2, -1).astype(int)
-    )
-    fx, fy = flow[y_coords, x_coords].T
+        # 更新上一幀影像，供下一次光流比對使用
+        prev_gray = curr_gray.copy()
 
-    # 繪製光流箭頭（綠色）
-    for i in range(len(x_coords)):
-        if np.sqrt(fx[i] ** 2 + fy[i] ** 2) > 0.5:  # 流動閾值（越小越多箭頭）
-            x, y = x_coords[i], y_coords[i]
-            cv2.arrowedLine(
-                display_frame,
-                (x, y),
-                (int(x + fx[i] * 2), int(y + fy[i] * 2)),
-                (0, 255, 0),
-                1,
-                tipLength=0.3,
-            )
+        if cv2.waitKey(1) != -1:
+            break
 
-    fire_sources = []
-    for contour in contours:
-        area = cv2.contourArea(contour)
+    cap.release()
+    cv2.destroyAllWindows()
 
-        # 只處理足夠大的區域
-        if area > 10:
-            M = cv2.moments(contour)
-            if M["m00"] != 0:
-                cx = int(M["m10"] / M["m00"])
-                cy = int(M["m01"] / M["m00"])
-                fire_sources.append((cx, cy, area))
-
-                # 用紅色加粗描邊標記火焰輪廓
-                cv2.drawContours(display_frame, [contour], 0, (0, 0, 255), 3)
-                # 標記面積
-                cv2.putText(
-                    display_frame,
-                    f"Area:{int(area)}",
-                    (cx - 30, cy - 25),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5,
-                    (0, 255, 0),
-                    2,
-                )
-
-    # --- 顯示統計信息 ---
-    cv2.putText(
-        display_frame,
-        f"Fire Sources (Motion + Color): {len(fire_sources)}",
-        (20, 30),
-        cv2.FONT_HERSHEY_SIMPLEX,
-        1,
-        (0, 255, 255),
-        2,
-    )
-
-    # 顯示運動強度範圍
-    cv2.putText(
-        display_frame,
-        f"Motion: {motion_mask.sum() // 255} pixels",
-        (20, 70),
-        cv2.FONT_HERSHEY_SIMPLEX,
-        0.7,
-        (255, 0, 255),
-        2,
-    )
-
-    cv2.imshow("Fire Detection - Motion + Color + Optical Flow", display_frame)
-    cv2.imshow("Motion Mask (Optical Flow)", motion_mask)
-    cv2.imshow("Fire Color Mask (R/G > 1.4 & R/B > 1.2)", fire_color_mask)
-    cv2.imshow("Combined (Motion + Color)", combined_mask)
-
-    # 寫入處理後的幀到輸出視頻
-    out.write(display_frame)
-
-    prev_gray = curr_gray
-    prev_frame = curr_frame
-
-    cv2.waitKey(1)
-
-cap.release()
-out.release()
-cv2.destroyAllWindows()
-
-print(f"視頻已保存到: {output_path}")
+if __name__ == "__main__":
+    main()
