@@ -30,7 +30,7 @@ def main():
 
     # 煙霧 (深灰到純白)
     lower_smoke = np.array([0, 0, 20])   
-    upper_smoke = np.array([179, 45, 255]) 
+    upper_smoke = np.array([179, 100, 255]) 
 
     while cap.isOpened():
         ret, frame = cap.read()
@@ -59,16 +59,17 @@ def main():
         # 為了降低樹莓派負擔，這裡的層數(levels)設為 3，迭代次數(iterations)設為 3
         flow = cv2.calcOpticalFlowFarneback(
             prev_gray, curr_gray, None, 
-            pyr_scale=0.5, levels=3, winsize=5, 
+            pyr_scale=0.5, levels=3, winsize=15, 
             iterations=3, poly_n=5, poly_sigma=1.2, flags=0
         )
         
         # 2. 計算光流的移動強度 (Magnitude)
         mag, _ = cv2.cartToPolar(flow[..., 0], flow[..., 1])
         
-        # 3. 建立光流運動遮罩 (過濾掉極微小的相機雜訊，保留移動強度 > 1.0 的像素)
-        flow_motion_mask = cv2.inRange(mag, 1.0, 255)
-        flow_motion_mask = cv2.morphologyEx(flow_motion_mask, cv2.MORPH_OPEN, kernel)
+        # 3. 建立光流運動遮罩 (過濾掉極微小的相機雜訊，保留移動強度 > 0.6 的像素)
+        flow_motion_mask = cv2.inRange(mag, 0.6, 255)
+        flow_motion_mask = cv2.dilate(flow_motion_mask, kernel, iterations=1)
+        flow_motion_mask = cv2.morphologyEx(flow_motion_mask, cv2.MORPH_CLOSE, kernel)
 
         # 4. 取得煙霧顏色遮罩
         smoke_color_mask = cv2.inRange(hsv_frame, lower_smoke, upper_smoke)
