@@ -23,66 +23,9 @@
 - [ ] 實作遮罩交集與火煙互斥邏輯。
 - [ ] 驗證並記錄 Raspberry Pi 上的 FPS 效能變化。
 ## ３. 目前效果
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/9ccdd328-7ade-4919-a632-1cf0fb854bb1" />
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/6844e1a8-9ed5-42aa-8c9c-f9c25dcc78c9" />
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/cb8f9e79-579d-4064-b521-d418758d11bc" />
 
-## ４. 系統流程圖
-```mermaid
-graph LR
-Input[輸入影像] --> Preprocess[影像前處理<br>HSV / Gray]
-Preprocess --> MOG2[MOG2 運動偵測]
-Preprocess --> HSV_Fire[火焰 HSV 過濾]
-MOG2 & HSV_Fire --> Fire_Out[標記火焰輪廓]
-Preprocess --> Flow[Farneback 光流法]
-Preprocess --> HSV_Smoke[煙霧 HSV 過濾]
-Flow & HSV_Smoke --> Smoke_Out[標記煙霧輪廓]
-Fire_Out & Smoke_Out --> Output[畫面輸出與迴圈更新]
-Output --> Input
-```
 
-## ５. 系統架構圖
-```mermaid
-graph LR
-    %% 整體排版設定為由左至右 (Left to Right)
-    
-    subgraph Stage1 ["1. 資料獲取模組"]
-        direction TB
-        Input[影片讀取單元<br/>VideoCapture]
-        Pre[影像規格化單元<br/>Resize / HSV / Gray]
-        
-        Input --> Pre
-    end
 
-    subgraph Stage2 ["2. 特徵提取模組"]
-        direction TB
-        Motion[動態分析引擎<br/>MOG2 & Farneback]
-        Color[色彩判定邏輯<br/>HSV 雙軌閥值]
-    end
+https://github.com/user-attachments/assets/9a866362-7d38-4d3f-9901-85035b86066b
 
-    subgraph Stage3 ["3. 信號融合模組"]
-        direction TB
-        Morph[形態學濾波器<br/>Morphology Ex]
-        AND[遮罩邏輯運算器<br/>Bitwise AND / NOT]
-        
-        Morph --> AND
-       
-    end
 
-    subgraph Stage4 ["4. 判讀顯示模組"]
-        direction TB
-        Detect[目標偵測與量化<br/>findContours / Area]
-        Vis[視覺化繪圖器<br/>UI & Bounding Box]
-        
-        Detect --> Vis
-    end
-
-    %% 跨模組的資料流 (這會強制系統將 Subgraph 橫向並排)
-    Pre --> Motion
-    Pre --> Color
-
-    Motion --> Morph
-    Color --> AND
-
-    AND --> Detect
-```
