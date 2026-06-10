@@ -87,7 +87,7 @@ def detect_smoke(
             pass
 
 def main():
-    video_path = "fire_smoke9.mp4"
+    video_path = "fire_smoke2.mp4"
     output_path = "output_videos/output_combined.mp4"
     input_video = cv2.VideoCapture(video_path)
 
