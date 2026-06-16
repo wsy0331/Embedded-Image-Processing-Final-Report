@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="第1頁" id="4527KE5y3vDLTgciTCfy">
-    <mxGraphModel dx="1571" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="1230" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -767,7 +767,7 @@
         <mxCell id="AM6K3hK1QcewxjrUJ7Lq-205" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Contours 輪廓" vertex="1">
           <mxGeometry height="80" width="80" x="840" y="4600" as="geometry" />
         </mxCell>
-        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-240" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-206" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-211">
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-240" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-206" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-211">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="AM6K3hK1QcewxjrUJ7Lq-206" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="標記火焰" vertex="1">
@@ -811,120 +811,6 @@
         </mxCell>
         <mxCell id="AM6K3hK1QcewxjrUJ7Lq-226" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-212" style="startArrow=none;endArrow=block;exitX=1;exitY=0.5;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-213" value="">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-54" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="522" y="5210" />
-              <mxPoint x="522" y="5270" />
-            </Array>
-            <mxPoint x="576" y="5270" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="輸入影片" vertex="1">
-          <mxGeometry height="30" width="60" x="222" y="5195" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-25" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJFw4t4bRu1jeO-uyN-R-28">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(51, 51, 51); font-family: &amp;quot;trebuchet ms&amp;quot;, verdana, arial, sans-serif; white-space: nowrap;&quot;&gt;&lt;font&gt;MOG2 運動偵測&lt;/font&gt;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="574.75" y="5100" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-27" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJFw4t4bRu1jeO-uyN-R-40">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="HSV" vertex="1">
-          <mxGeometry height="60" width="120" x="740" y="5100" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-29" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IJFw4t4bRu1jeO-uyN-R-42" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="696" y="5270" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-31" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJFw4t4bRu1jeO-uyN-R-35">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="煙標記" vertex="1">
-          <mxGeometry height="60" width="120" x="1382" y="5165" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="輸出影片" vertex="1">
-          <mxGeometry height="30" width="60" x="1532" y="5180" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-36" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJFw4t4bRu1jeO-uyN-R-26">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="522" y="5210" />
-              <mxPoint x="522" y="5130" />
-            </Array>
-            <mxPoint x="285.63" y="5210" as="sourcePoint" />
-            <mxPoint x="558.38" y="5130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-56" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IJFw4t4bRu1jeO-uyN-R-55" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span class=&quot;icon-label&quot; style=&quot;padding: 0px 3px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 10px;&quot;&gt;Contours&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px; background-color: rgba(255, 255, 255, 0.06); font-family: &amp;quot;Segoe UI Variable Display&amp;quot;, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, sans-serif; text-align: start; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;輪廓&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="900" y="5100" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-59" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IJFw4t4bRu1jeO-uyN-R-58" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="高斯模糊(影像)" vertex="1">
-          <mxGeometry height="60" width="120" x="740" y="5240" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-43" parent="1" style="text;whiteSpace=wrap;html=1;" value="平滑化影像" vertex="1">
-          <mxGeometry height="40" width="90" x="859" y="5195" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-45" parent="1" style="text;whiteSpace=wrap;html=1;" value="判斷物體移動" vertex="1">
-          <mxGeometry height="40" width="110" x="677" y="5050" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-46" parent="1" style="text;whiteSpace=wrap;html=1;" value="色彩遮罩" vertex="1">
-          <mxGeometry height="40" width="120" x="856" y="5060" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-47" parent="1" style="text;whiteSpace=wrap;html=1;" value="符合HSV的輪廓" vertex="1">
-          <mxGeometry height="40" width="110" x="982" y="5050" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-48" parent="1" style="text;whiteSpace=wrap;html=1;" value="稠密光流場" vertex="1">
-          <mxGeometry height="40" width="90" x="1002" y="5200" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-49" parent="1" style="text;whiteSpace=wrap;html=1;" value="平滑化向量場" vertex="1">
-          <mxGeometry height="40" width="110" x="1172" y="5280" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="灰階影像" vertex="1">
-          <mxGeometry height="30" width="60" x="694.75" y="5195" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-51" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IJFw4t4bRu1jeO-uyN-R-34" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="FoE煙源偵測" vertex="1">
-          <mxGeometry height="60" width="120" x="1207" y="5165" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-57" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJFw4t4bRu1jeO-uyN-R-52">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="標記火焰" vertex="1">
-          <mxGeometry height="60" width="120" x="1047" y="5100" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-62" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IJFw4t4bRu1jeO-uyN-R-61" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(51, 51, 51); font-family: &amp;quot;trebuchet ms&amp;quot;, verdana, arial, sans-serif; white-space: nowrap;&quot;&gt;&lt;font&gt;Farneback 光流法&lt;/font&gt;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="902" y="5240" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="灰階處理" vertex="1">
-          <mxGeometry height="60" width="120" x="576" y="5240" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-63" edge="1" parent="1" source="IJFw4t4bRu1jeO-uyN-R-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJFw4t4bRu1jeO-uyN-R-52">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-61" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="高斯模糊(光流)" vertex="1">
-          <mxGeometry height="60" width="120" x="1047" y="5240" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-64" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="標記" vertex="1">
-          <mxGeometry height="30" width="60" x="1184" y="5100" as="geometry" />
-        </mxCell>
-        <mxCell id="IJFw4t4bRu1jeO-uyN-R-65" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="FoE座標" vertex="1">
-          <mxGeometry height="30" width="60" x="1327" y="5120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
