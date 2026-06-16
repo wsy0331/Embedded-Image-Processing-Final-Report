@@ -1,9 +1,18 @@
 <mxfile host="Electron">
   <diagram name="第1頁" id="4527KE5y3vDLTgciTCfy">
-    <mxGraphModel dx="1414" dy="889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="1488" dy="936" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-46" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 3: 煙霧後處理與輸出 (Post-Processing)" vertex="1">
+          <mxGeometry height="385" width="353" x="1342" y="1950" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-47" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 2: 光流專用 (Heavy Workload)" vertex="1">
+          <mxGeometry height="104" width="259" x="1325" y="1772" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-48" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 1: 前處理與火焰 (Pipeline Manager)" vertex="1">
+          <mxGeometry height="515" width="547" x="760" y="1539" as="geometry" />
+        </mxCell>
         <mxCell id="HoATDb4DY_-5dcd76K1U-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;第一版&lt;/font&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="60" x="40" y="40" as="geometry" />
         </mxCell>
@@ -31,7 +40,7 @@
         <mxCell id="HoATDb4DY_-5dcd76K1U-7" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;labelBackgroundColor=none;" value="&lt;span style=&quot;color: rgb(51, 51, 51); font-family: &amp;quot;trebuchet ms&amp;quot;, verdana, arial, sans-serif; white-space: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;火的HSV&lt;/font&gt;&lt;/span&gt;" vertex="1">
           <mxGeometry height="80" width="80" x="840" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="Wvpoend7H3CRMPK9joEF-11" edge="1" parent="1" source="HoATDb4DY_-5dcd76K1U-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Wvpoend7H3CRMPK9joEF-10">
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-2" edge="1" parent="1" source="HoATDb4DY_-5dcd76K1U-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="HoATDb4DY_-5dcd76K1U-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;labelBackgroundColor=none;" value="&lt;span style=&quot;color: rgb(51, 51, 51); font-family: &amp;quot;trebuchet ms&amp;quot;, verdana, arial, sans-serif; white-space: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Farneback 光流法&lt;/font&gt;&lt;/span&gt;" vertex="1">
@@ -123,16 +132,14 @@
         <mxCell id="Wvpoend7H3CRMPK9joEF-6" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;a href=&quot;vscode-file://vscode-app/c:/Users/swu33/AppData/Local/Programs/Microsoft%20VS%20Code/8761a5560c/resources/app/out/vs/code/electron-browser/workbench/workbench.html&quot; title=&quot;&quot; draggable=&quot;true&quot; data-href=&quot;file:///c%3A/GitHUB/Embedded-Image-Processing-Final-Report/.venv/Lib/site-packages/cv2/__init__.py#1%2C1&quot; class=&quot;chat-inline-anchor-widget show-file-icons&quot; style=&quot;white-space: nowrap; border-color: rgba(255, 255, 255, 0.1); border-style: solid; border-width: 0.8px; border-image: none 100% / 1 / 0 stretch; border-radius: 4px; margin: 0px 1px; padding: 1px 3px; text-wrap-style: initial; width: fit-content; text-decoration: none; user-select: text; font-family: &amp;quot;Segoe UI Variable Display&amp;quot;, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, sans-serif; text-align: start; background-color: rgba(255, 255, 255, 0.06);&quot;&gt;&lt;span class=&quot;icon-label&quot; style=&quot;padding: 0px 3px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 10px;&quot;&gt;Contours&lt;/font&gt;&lt;/span&gt;&lt;/a&gt;&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI Variable Display&amp;quot;, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, sans-serif; text-align: start; background-color: rgba(255, 255, 255, 0.06);&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 10px;&quot;&gt;輪廓&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="80" x="1040" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="Wvpoend7H3CRMPK9joEF-12" edge="1" parent="1" source="Wvpoend7H3CRMPK9joEF-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HoATDb4DY_-5dcd76K1U-32">
+        <mxCell id="Wvpoend7H3CRMPK9joEF-12" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="HoATDb4DY_-5dcd76K1U-32">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1380" y="480" />
+              <mxPoint x="1380" y="580" />
               <mxPoint x="1380" y="360" />
             </Array>
+            <mxPoint x="920" y="480.0000000000002" as="sourcePoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="Wvpoend7H3CRMPK9joEF-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;labelBackgroundColor=none;" value="&lt;font color=&quot;#333333&quot; face=&quot;trebuchet ms, verdana, arial, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 10px; text-wrap-mode: nowrap;&quot;&gt;標記煙的方向&lt;/span&gt;&lt;/font&gt;" vertex="1">
-          <mxGeometry height="80" width="80" x="840" y="440" as="geometry" />
         </mxCell>
         <mxCell id="Wvpoend7H3CRMPK9joEF-16" edge="1" parent="1" source="Wvpoend7H3CRMPK9joEF-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HoATDb4DY_-5dcd76K1U-43">
           <mxGeometry relative="1" as="geometry" />
@@ -148,6 +155,662 @@
         </mxCell>
         <mxCell id="Wvpoend7H3CRMPK9joEF-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span class=&quot;icon-label&quot; style=&quot;padding: 0px 3px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 10px;&quot;&gt;Contours&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px; background-color: rgba(255, 255, 255, 0.06); font-family: &amp;quot;Segoe UI Variable Display&amp;quot;, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, sans-serif; text-align: start; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;輪廓&lt;/span&gt;" vertex="1">
           <mxGeometry height="60" width="120" x="1000" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;labelBackgroundColor=none;" value="&lt;font color=&quot;#333333&quot; face=&quot;trebuchet ms, verdana, arial, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 10px; text-wrap-mode: nowrap;&quot;&gt;標記煙的方向&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="1270" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="1360" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-49" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="影像輸入" vertex="1">
+          <mxGeometry height="39" width="89" x="1049" y="1450" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-50" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="灰階處理" vertex="1">
+          <mxGeometry height="54" width="124" x="1031" y="1564" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-51" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="MOG2 運動偵測" vertex="1">
+          <mxGeometry height="54" width="170" x="795" y="1668" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-52" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="HSV 色彩擷取" vertex="1">
+          <mxGeometry height="54" width="156" x="1015" y="1668" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-53" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Contours 輪廓" vertex="1">
+          <mxGeometry height="54" width="160" x="888" y="1797" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-54" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="標記火焰" vertex="1">
+          <mxGeometry height="54" width="124" x="906" y="1975" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-55" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Farneback 光流法" vertex="1">
+          <mxGeometry height="54" width="187" x="1362" y="1797" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-56" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="光流高斯模糊" vertex="1">
+          <mxGeometry height="54" width="156" x="1377" y="1975" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-57" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="FoE 煙源偵測" vertex="1">
+          <mxGeometry height="54" width="154" x="1438" y="2152" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-58" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="標記煙霧" vertex="1">
+          <mxGeometry height="54" width="124" x="1453" y="2256" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-59" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="整合輸出畫面" vertex="1">
+          <mxGeometry height="39" width="121" x="1167" y="2385" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-60" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-49" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-50" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-61" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-50" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.78;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-51" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="1643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-62" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-50" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-52" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-63" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-51" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.22;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-53" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="1772" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-64" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-52" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.91;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-53" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1093" y="1772" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-65" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-53" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-54" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-66" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-50" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.89;entryX=0;entryY=0.07;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-55" value="傳遞灰階圖">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1247" y="1643" />
+              <mxPoint x="1247" y="1772" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-67" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-55" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-56" value="傳遞 fx, fy 浮點數矩陣">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-68" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-56" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.36;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-57" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1455" y="2103" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-69" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-54" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.77;entryX=0.64;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-57" value="提供火源區域遮罩 (Fire Mask)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="2054" />
+              <mxPoint x="1575" y="2103" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-70" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-57" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-58" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-71" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-54" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.97;entryX=0;entryY=0.32;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-59" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="2054" />
+              <mxPoint x="840" y="2360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-72" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-58" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.26;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-59" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1515" y="2360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-73" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 3: 煙霧後處理與輸出 (Post-Processing)" vertex="1">
+          <mxGeometry height="312" width="606" x="592" y="2974" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-74" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 2: 光流專用 (Heavy Workload)" vertex="1">
+          <mxGeometry height="208" width="259" x="310" y="2692" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-75" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 1: 前處理與火焰 (Pipeline Manager)" vertex="1">
+          <mxGeometry height="361" width="622" x="588" y="2539" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-76" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="影像輸入" vertex="1">
+          <mxGeometry height="39" width="89" x="839" y="2450" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-77" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="灰階處理" vertex="1">
+          <mxGeometry height="54" width="124" x="623" y="2564" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-78" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="MOG2 運動偵測" vertex="1">
+          <mxGeometry height="54" width="170" x="797" y="2564" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-79" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="HSV 色彩擷取" vertex="1">
+          <mxGeometry height="54" width="156" x="1017" y="2564" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-80" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Contours 輪廓" vertex="1">
+          <mxGeometry height="54" width="160" x="910" y="2717" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-81" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="標記火焰" vertex="1">
+          <mxGeometry height="54" width="124" x="721" y="2821" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-82" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="高斯模糊" vertex="1">
+          <mxGeometry height="54" width="124" x="377" y="2717" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-83" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Farneback 光流法" vertex="1">
+          <mxGeometry height="54" width="187" x="346" y="2821" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-84" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="高斯模糊" vertex="1">
+          <mxGeometry height="54" width="124" x="629" y="2999" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-85" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="FoE 煙源偵測" vertex="1">
+          <mxGeometry height="54" width="154" x="977" y="3103" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-86" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="煙的標記" vertex="1">
+          <mxGeometry height="54" width="124" x="992" y="3207" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-87" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="整合輸出" vertex="1">
+          <mxGeometry height="39" width="89" x="944" y="3336" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-88" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-76" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.75;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-77" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="685" y="2514" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-89" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-76" style="curved=1;startArrow=none;endArrow=block;exitX=0.49;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-78" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="882" y="2514" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-90" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-76" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.74;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-79" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1095" y="2514" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-91" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-78" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.15;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-80" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="882" y="2692" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-92" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-79" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.84;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-80" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1095" y="2692" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-93" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-80" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.87;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-81" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="783" y="2796" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-94" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-77" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.26;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-82" value="傳遞灰階圖">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="685" y="2692" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-95" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-82" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-83" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-96" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-83" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-84" value="傳遞 fx, fy 光流矩陣">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="439" y="2900" />
+              <mxPoint x="691" y="2937" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-97" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-84" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.3;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-85" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="691" y="3078" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-98" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-80" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.84;exitY=1;entryX=0.64;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-85" value="提供火源區域遮罩">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1095" y="2796" />
+              <mxPoint x="1095" y="3078" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-99" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-85" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-86" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-100" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-81" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.4;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-87" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="783" y="2900" />
+              <mxPoint x="503" y="2937" />
+              <mxPoint x="503" y="3311" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-101" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-86" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.82;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-87" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1054" y="3311" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-102" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 3: 煙霧後處理與輸出 (Post-Processing)" vertex="1">
+          <mxGeometry height="337" width="318" x="1510" y="2884" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-103" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 2: 光流專用 (Heavy Workload)" vertex="1">
+          <mxGeometry height="208" width="259" x="1531" y="2602" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-104" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="核心 1: 前處理與火焰 (Pipeline Manager)" vertex="1">
+          <mxGeometry height="539" width="447" x="1811" y="2449" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-105" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="影像輸入" vertex="1">
+          <mxGeometry height="39" width="89" x="1880" y="2360" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-106" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="灰階處理" vertex="1">
+          <mxGeometry height="54" width="124" x="1863" y="2474" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-107" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="MOG2 運動偵測" vertex="1">
+          <mxGeometry height="54" width="170" x="2053" y="2627" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-108" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="HSV 色彩擷取" vertex="1">
+          <mxGeometry height="54" width="156" x="1846" y="2627" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-109" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Contours 輪廓" vertex="1">
+          <mxGeometry height="54" width="160" x="1968" y="2731" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-110" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="標記火焰" vertex="1">
+          <mxGeometry height="54" width="124" x="2088" y="2909" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-111" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="高斯模糊" vertex="1">
+          <mxGeometry height="54" width="124" x="1598" y="2627" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-112" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Farneback 光流法" vertex="1">
+          <mxGeometry height="54" width="187" x="1567" y="2731" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-113" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="高斯模糊" vertex="1">
+          <mxGeometry height="54" width="124" x="1598" y="2909" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-114" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="FoE 煙源偵測" vertex="1">
+          <mxGeometry height="54" width="154" x="1593" y="3038" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-115" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="煙的標記" vertex="1">
+          <mxGeometry height="54" width="124" x="1608" y="3142" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-116" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="整合輸出" vertex="1">
+          <mxGeometry height="39" width="89" x="1855" y="3271" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-117" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-105" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-106" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-118" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-106" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.84;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-107" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2138" y="2565" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-119" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-106" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-108" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-120" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-107" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.79;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-109" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2138" y="2706" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-121" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-108" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.1;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-109" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1925" y="2706" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-122" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-109" style="curved=1;startArrow=none;endArrow=block;exitX=0.83;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-110" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2150" y="2810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-123" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-106" style="curved=1;startArrow=none;endArrow=block;exitX=0.3;exitY=1;entryX=1;entryY=0.21;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-111" value="傳遞影像">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1868" y="2565" />
+              <mxPoint x="1868" y="2602" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-124" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-111" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-112" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-125" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-112" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-113" value="傳遞 fx, fy 光流矩陣">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-126" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-113" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.47;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-114" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1660" y="3013" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-127" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-109" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.05;exitY=1;entryX=0.66;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-114" value="提供火源區域遮罩">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1910" y="2810" />
+              <mxPoint x="1910" y="2988" />
+              <mxPoint x="1716" y="3013" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-128" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-114" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-115" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-129" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-110" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.3;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-116" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2150" y="3246" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-130" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-115" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.28;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-116" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1670" y="3246" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-134" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="影像輸入 / 共享記憶體" vertex="1">
+          <mxGeometry height="39" width="187" x="469" y="3400" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-135" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="1. MOG2 運動偵測" vertex="1">
+          <mxGeometry height="54" width="189" x="324" y="3691" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-136" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="2. HSV 色彩擷取" vertex="1">
+          <mxGeometry height="54" width="175" x="330" y="3819" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-137" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="3. Contours 輪廓" vertex="1">
+          <mxGeometry height="54" width="179" x="329" y="3997" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-138" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="4. 標記火焰" vertex="1">
+          <mxGeometry height="54" width="143" x="277" y="4125" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-139" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="1. 灰階處理" vertex="1">
+          <mxGeometry height="54" width="143" x="694" y="3538" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-140" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="2. 高斯模糊 (影像)" vertex="1">
+          <mxGeometry height="54" width="192" x="669" y="3691" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-141" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="3. Farneback 光流法" vertex="1">
+          <mxGeometry height="54" width="206" x="662" y="3819" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-142" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="1. 高斯模糊 (光流)" vertex="1">
+          <mxGeometry height="54" width="192" x="669" y="3997" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-143" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="2. FoE 煙源偵測" vertex="1">
+          <mxGeometry height="54" width="173" x="678" y="4125" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-144" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="3. 煙的標記" vertex="1">
+          <mxGeometry height="54" width="143" x="694" y="4278" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-145" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="整合輸出畫面" vertex="1">
+          <mxGeometry height="39" width="121" x="502" y="4407" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-146" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-134" style="curved=1;startArrow=none;endArrow=block;exitX=0.23;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-135" value="讀取原始彩圖">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="418" y="3476" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-147" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-134" style="curved=1;startArrow=none;endArrow=block;exitX=0.87;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-139" value="讀取原始彩圖">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="765" y="3476" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-148" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-135" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-136" value="接著執行">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-149" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-136" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-137" value="合併計算">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-150" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-137" style="curved=1;startArrow=none;endArrow=block;exitX=0.33;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-138" value="接著執行">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="348" y="4088" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-151" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-138" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.18;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-145" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="348" y="4382" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-152" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-139" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-140" value="接著執行">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-153" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-140" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-141" value="接著執行">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-154" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-141" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-142" value="傳遞 fx, fy (觸發核心 3)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-155" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-142" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-143" value="接著執行">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-156" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-137" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.66;exitY=1;entryX=0;entryY=0.13;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-143" value="傳遞火源遮罩 (同步等待)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="488" y="4088" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-157" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-143" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-144" value="接著執行">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-158" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-144" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.99;entryY=0.16;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-145" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="765" y="4382" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-159" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1" vertex="1">
+          <mxGeometry height="60" width="30" x="1030" y="3500" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-160" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="3" vertex="1">
+          <mxGeometry height="60" width="39" x="1151" y="3620" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-161" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="2" vertex="1">
+          <mxGeometry height="60" width="119" x="1031" y="3560" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-165" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1" vertex="1">
+          <mxGeometry height="60" width="30" x="1150" y="3500" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-166" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="3" vertex="1">
+          <mxGeometry height="60" width="39" x="1271" y="3620" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-167" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="2" vertex="1">
+          <mxGeometry height="60" width="119" x="1151" y="3560" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-168" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1" vertex="1">
+          <mxGeometry height="60" width="40" x="1030" y="3693" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-169" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="3" vertex="1">
+          <mxGeometry height="60" width="39" x="1171" y="3813" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-170" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="2" vertex="1">
+          <mxGeometry height="60" width="100" x="1071" y="3753" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-182" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1030" y="3680" as="sourcePoint" />
+            <mxPoint x="1190" y="3680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-183" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-160" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-166" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1190" y="3666" as="sourcePoint" />
+            <mxPoint x="1349" y="3670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-184" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1" vertex="1">
+          <mxGeometry height="60" width="30" x="1025" y="3934" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-185" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="3" vertex="1">
+          <mxGeometry height="60" width="39" x="1055" y="3934" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-186" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="2" vertex="1">
+          <mxGeometry height="60" width="110" x="1134.25" y="3994" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-189" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1" vertex="1">
+          <mxGeometry height="60" width="30" x="1135" y="3934" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-190" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="3" vertex="1">
+          <mxGeometry height="60" width="39" x="1165" y="3934" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-191" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="2" vertex="1">
+          <mxGeometry height="60" width="110" x="1244.75" y="3994" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-192" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="60" width="110" x="1025" y="3994" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-194" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1" vertex="1">
+          <mxGeometry height="60" width="40" x="1130" y="3693" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-195" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="3" vertex="1">
+          <mxGeometry height="60" width="39" x="1271" y="3813" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-196" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="2" vertex="1">
+          <mxGeometry height="60" width="100" x="1171" y="3753" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-232" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-202" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-207">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-233" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-202" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-203">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-202" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;" value="影像輸入" vertex="1">
+          <mxGeometry height="80" width="80" x="240" y="4720" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-234" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-203" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-204">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-203" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="MOG2 運動偵測" vertex="1">
+          <mxGeometry height="80" width="80" x="440" y="4600" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-235" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-204" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-205">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-204" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="HSV 色彩擷取" vertex="1">
+          <mxGeometry height="80" width="80" x="640" y="4600" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-238" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-205" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-206">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-205" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Contours 輪廓" vertex="1">
+          <mxGeometry height="80" width="80" x="840" y="4600" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-240" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-206" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-211">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-206" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="標記火焰" vertex="1">
+          <mxGeometry height="80" width="80" x="1040" y="4600" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-231" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-207" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-208">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-207" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="灰階處理" vertex="1">
+          <mxGeometry height="80" width="80" x="440" y="4840" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-236" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-208" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-209">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-208" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="高斯模糊 (影像)" vertex="1">
+          <mxGeometry height="80" width="80" x="640" y="4840" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-237" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-209" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-210">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-209" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Farneback 光流法" vertex="1">
+          <mxGeometry height="80" width="80" x="840" y="4840" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-242" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-210" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-211">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-210" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="高斯模糊 (光流)" vertex="1">
+          <mxGeometry height="80" width="80" x="1040" y="4840" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-241" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-211" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AM6K3hK1QcewxjrUJ7Lq-212">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-211" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="FoE 煙源偵測" vertex="1">
+          <mxGeometry height="80" width="80" x="1200" y="4720" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-212" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="煙的標記" vertex="1">
+          <mxGeometry height="80" width="80" x="1400" y="4720" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-213" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;" value="輸出畫面" vertex="1">
+          <mxGeometry height="80" width="80" x="1600" y="4720" as="geometry" />
+        </mxCell>
+        <mxCell id="AM6K3hK1QcewxjrUJ7Lq-226" edge="1" parent="1" source="AM6K3hK1QcewxjrUJ7Lq-212" style="startArrow=none;endArrow=block;exitX=1;exitY=0.5;rounded=0;" target="AM6K3hK1QcewxjrUJ7Lq-213" value="">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
