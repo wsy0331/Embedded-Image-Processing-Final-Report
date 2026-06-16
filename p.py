@@ -129,9 +129,9 @@ def main():
         fire_mask = detect_fire(
             curr_frame=new_frame,
             bg_subtractor=bg_subtractor_fire,
-            kernel=cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)),
+            kernel=cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)),
             lower_fire=np.array([0, 100, 150]),
-            upper_fire=np.array([35, 255, 255]),
+            upper_fire=np.array([60, 255, 255]),
             display_frame=new_frame,
         )
 
