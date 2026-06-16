@@ -2,9 +2,7 @@ import os
 import cv2
 import numpy as np
 
-def detect_fire(
-    curr_frame, bg_subtractor, kernel, lower_fire, upper_fire, display_frame
-):
+def detect_fire(curr_frame, bg_subtractor, kernel, lower_fire, upper_fire, display_frame):
     motion_mask = bg_subtractor.apply(curr_frame)
     _, motion_mask = cv2.threshold(motion_mask, 254, 255, cv2.THRESH_BINARY)
     motion_mask = cv2.morphologyEx(motion_mask, cv2.MORPH_OPEN, kernel)
@@ -22,9 +20,7 @@ def detect_fire(
             cv2.drawContours(display_frame, [contour], -1, (0, 255, 0), 2)
     return fire_mask
 
-def detect_smoke(
-    old_gray, new_gray, step, min_speed, display_frame, fire_mask
-):
+def detect_smoke(old_gray, new_gray, step, min_speed, display_frame, fire_mask):
     # 1. 計算光流
     flow = cv2.calcOpticalFlowFarneback(
         old_gray, new_gray, None, 0.5, 3, 15, 3, 5, 1.2, 0
@@ -87,7 +83,7 @@ def detect_smoke(
             pass
 
 def main():
-    video_path = "fire_smoke2.mp4"
+    video_path = "fire_smoke5.mp4"
     output_path = "output_videos/output_combined.mp4"
     input_video = cv2.VideoCapture(video_path)
 
@@ -137,12 +133,13 @@ def main():
 
         fire_mask_dilated = cv2.dilate(fire_mask, dilate_kernel)
 
-        detect_smoke(old_gray,new_gauss,10,0.7,new_frame,fire_mask_dilated,)
+        detect_smoke(old_gray, new_gauss, 10, 0.7, new_frame, fire_mask_dilated)
 
         cv2.imshow("Input Video", raw_display)
         cv2.imshow("Output Video", new_frame)
         writer.write(new_frame)
         old_gray = new_gauss.copy()
+
         if cv2.waitKey(25) >= 0:
             break
 
