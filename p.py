@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 from datetime import datetime
+import time
 
 def detect_fire(curr_frame, bg_subtractor, display_frame, kernel=None, lower_fire=None, upper_fire=None):
     if kernel is None:
@@ -101,6 +102,8 @@ def main():
 
     try:
         while input_video.isOpened():
+            start_time = time.time()  # 2. 記錄開始時間
+            
             ret, frame = input_video.read()
             if not ret:
                 break
@@ -123,6 +126,12 @@ def main():
             fire_mask = detect_fire(new_frame, bg_subtractor_fire, display_frame=new_frame)
             fire_mask_dilated = cv2.dilate(fire_mask, dilate_kernel)
             detect_smoke(old_gauss, new_gauss, display_frame=new_frame, fire_mask=fire_mask_dilated)
+
+            # 3. 計算並顯示處理時間
+            end_time = time.time()
+            process_time = (end_time - start_time) * 1000  # 轉換為毫秒
+            text = f"Process Time: {process_time:.2f} ms"
+            cv2.putText(new_frame, text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
 
             cv2.imshow("Input Video (Raw)", raw_display)
             cv2.imshow("Output Video (Processed)", new_frame)
